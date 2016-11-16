@@ -1,0 +1,95 @@
+body {
+  background: #770000 url('http://entourage-web-images.s3.amazonaws.com/partners/mosaic_pattern.png') repeat !important;
+  padding: 30px;
+}
+
+input {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#footer {
+  margin: 40px 0px 0px 0px;
+  color: white;
+  font-size: 8pt;
+  text-align: center;
+  width: 100%;
+}
+
+#mainBody {
+  background-color: white;
+  
+  box-sizing: border-box;
+  //position: relative;
+  padding: 10px;
+  border-radius: 10px;
+	border: 1px solid rgba(147, 184, 189,0.8);
+	-webkit-box-shadow: 0pt 15px 45px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	   -moz-box-shadow: 0pt 15px 45px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	        box-shadow: 0pt 15px 45px rgba(105, 108, 109, 0.7), 0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;  
+}
+
+.btn {
+  padding: 10px 20px 10px 20px;
+  background-color: #337ab7;
+  color: white;
+  border: 1px outset white;
+}
+.btn:hover {
+  background-color: #539ad7;
+  color: white;
+}
+
+.btn-default {
+  background-color: #135a97;
+}
+
+.msgRow {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+.imgDiv {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+	border: 1px solid rgba(150, 150, 150,0.8);
+	-webkit-box-shadow: 0pt 10px 15px rgba(100, 100, 100, 0.7), 0px 0px 8px 5px rgba(210, 210, 210, 0.4) inset;
+	   -moz-box-shadow: 0pt 10px 15px rgba(100, 100, 100, 0.7), 0px 0px 8px 5px rgba(210, 210, 210, 0.4) inset;
+	        box-shadow: 0pt 10px 15px rgba(100, 100, 100, 0.7), 0px 0px 8px 5px rgba(210, 210, 210, 0.4) inset;
+	-webkit-box-shadow: 5px;
+	-moz-border-radius: 5px;  
+  
+}
+
+.imgDivSelected {
+  background-color: #337ab7;    
+}
+
+.imgPreviewDiv {
+  border: 1px solid rgb(100, 100, 100, 0.5);
+  background: #ffffff url('http://entourage-web-images.s3.amazonaws.com/photography/blue-background.jpg') repeat !important;
+  position: relative;
+}
+
+.imgFileName {
+  text-align: center;
+  font-weight: bold;
+  font-size: 10pt;
+  margin-top: 10px;
+}
+
+.imgOverlay {
+  background-color: rgba(255, 255, 255, 0);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
