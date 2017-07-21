@@ -3,36 +3,47 @@
 <!-- #include File="../../wwwroot/appservices/PhotographyQueryManager.asp" -->
 <%
   pageTitle = "View Photos"
-  
+
+  ppid = request("ppid")    
   uid = request("uid")
   selectedPhotoId = ""
   
-  sql = "SELECT contract_id, photo_person_id, photography_user_id FROM photography_users WHERE user_guid = '" & escapeString(uid) & "'"
-  set uRecSet = executeYBQuery(sql)
-  
-  if uRecSet.EOF = false then
-    contractId = uRecSet("contract_id")
-    photoPersonId = uRecSet("photo_person_id")
-    set personRecSet = getPhotographyPersonInformation(photoPersonId)
-    personName = personRecSet("first_name") & " " & personRecSet("last_name")
-    sql = "SELECT org_id FROM service_contracts WHERE contract_id = '" & contractId & "'"
-    set conRecSet = executeYBQuery(sql)
-    if conRecSet.EOF = false then
-      orgId = conRecSet("org_id")
-      set orgRecSet = getOrganizationInformation(orgId)
-      if orgRecSet.EOF = false then
-        schoolName = orgRecSet("org_name")
-      end if
+  if ppid <> "" then
+    photoPersonId = ppId
+    sql = "SELECT contract_id FROM photography_people WHERE photo_person_id = " & escapeString(photoPersonId)
+    set personRecSet = executeYBQuery(sql)
+    if personRecSet.EOF = False then
+      contractId = personRecSet("contract_id")
     end if
     
-    sql = "SELECT photography_photo_id FROM photography_user_photos WHERE photography_user_id = '" & escapeString(uRecSet("photography_user_id")) & "' " & _
-      "AND photo_person_id = " & photoPersonId
-    set sRecSet = executeYBQuery(sql)
-    if sRecSet.EOF = false then
-      selectedPhotoId = sRecSet("photography_photo_id")
-    end if  
-  else
-    response.redirect "/index.asp"
+  elseif uid <> "" then
+    sql = "SELECT contract_id, photo_person_id, photography_user_id FROM photography_users WHERE user_guid = '" & escapeString(uid) & "'"
+    set uRecSet = executeYBQuery(sql)
+  
+    if uRecSet.EOF = false then
+      contractId = uRecSet("contract_id")
+      photoPersonId = uRecSet("photo_person_id")
+      set personRecSet = getPhotographyPersonInformation(photoPersonId)
+      personName = personRecSet("first_name") & " " & personRecSet("last_name")
+      sql = "SELECT org_id FROM service_contracts WHERE contract_id = '" & contractId & "'"
+      set conRecSet = executeYBQuery(sql)
+      if conRecSet.EOF = false then
+        orgId = conRecSet("org_id")
+        set orgRecSet = getOrganizationInformation(orgId)
+        if orgRecSet.EOF = false then
+          schoolName = orgRecSet("org_name")
+        end if
+      end if
+      
+      sql = "SELECT photography_photo_id FROM photography_user_photos WHERE photography_user_id = '" & escapeString(uRecSet("photography_user_id")) & "' " & _
+        "AND photo_person_id = " & photoPersonId
+      set sRecSet = executeYBQuery(sql)
+      if sRecSet.EOF = false then
+        selectedPhotoId = sRecSet("photography_photo_id")
+      end if  
+    else
+      response.redirect "/index.asp"
+    end if
   end if
   
 %>

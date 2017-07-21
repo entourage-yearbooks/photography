@@ -6,8 +6,8 @@
   uid = request("uid")
   photoId = request("photo_id")
   debugMessage "uid = " & uid & " photoId= " & photoId
-  
   set uRecSet = getPhotographyUserInformationByGUID(uid)
+  
   contractId = uRecSet("contract_id")
   photoPersonId = uRecSet("photo_person_id")
   packageId = "DEFAULT"
