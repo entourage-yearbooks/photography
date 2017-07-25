@@ -6,10 +6,10 @@
   
   if request("email_address") <> "" then
     debugMessage "Authenticate this access"
-    studentId = request("student_id")
+    studentId = Trim(request("student_id"))
     email = Trim(lcase(request("email_address")))
     sql = "SELECT photo_person_id FROM photography_people WHERE contract_id = '" & contractId & "' " & _
-      "AND student_id = '" & escapeString(studentId) & "' "
+      "AND (student_id = '" & escapeString(studentId) & "' or ticket_code = '" & escapeString(studentId) & "') "
     debugMessage "SQL: " & sql
     set pRecSet = executeYBQuery(sql)
     if pRecSet.EOF then

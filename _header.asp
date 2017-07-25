@@ -11,8 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title><%= pageTitle %></title>
-    <link rel="icon" href="http://www.entourageco.com/main/wp-content/uploads/2016/09/cropped-favicon_whiteE-32x32.png" sizes="32x32" />
-    <!-- Bootstrap -->
+	  <link rel="icon" href="http://www.entourageco.com/wp-content/uploads/2017/06/cropped-favicon_whiteE-32x32.png" sizes="32x32" />
+    <link rel="icon" href="http://www.entourageco.com/wp-content/uploads/2017/06/cropped-favicon_whiteE-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed" href="http://www.entourageco.com/wp-content/uploads/2017/06/cropped-favicon_whiteE-180x180.png" />
+    <meta name="msapplication-TileImage" content="http://www.entourageco.com/wp-content/uploads/2017/06/cropped-favicon_whiteE-270x270.png" />    <!-- Bootstrap -->
+    
     <link href="<%= bootStrapDir %>/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link href="/css/common.css" rel="stylesheet">
