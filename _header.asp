@@ -27,7 +27,6 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-
     </style>
   </head>
   <body>
@@ -41,7 +40,7 @@
           <div class="header clearfix">
             <nav>
               <ul class="nav nav-pills pull-right">
-                <li role="presentation"><a href="/index.asp?contract_id=<%= contractId %>">Home</a></li>
+                <li role="presentation"><a href="/Home.asp?contract_id=<%= contractId %>">Home</a></li>
                 <li role="presentation"><a href="/contact.asp?uid=<%= uid %>">Contact</a></li>
                 <li role="presentation"><a href="/index.asp?contract_id=<%= contractId %>">Log Out</a></li>
               </ul>
