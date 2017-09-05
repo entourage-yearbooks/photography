@@ -180,6 +180,7 @@
     }
   </script>
   <form name="theForm" action="PhotographyCalendar.asp">
+    <input type="hidden" name="admin" value="<%= request("admin") %>">
     <div class="container">
       <h1>Entourage Photography Calendar</h2>
       <div class="row">
