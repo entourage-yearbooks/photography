@@ -3,7 +3,8 @@
 
   	Application("CHILI_USER") = "EntourageWorkUser"
   	Application("CHILI_PASSWORD") = "alexander5"
-  	Application("DB_SERVER") = "10.0.50.199"
+    Application("DB_SERVER") = "db01.entourage.internal"
+    Application("DB_SERVER_READ_ONLY")	 = "db01-replica.entourage.internal"
   	
     
   End Sub
